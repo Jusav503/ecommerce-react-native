@@ -1,15 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { AntDesign } from '@expo/vector-icons'; 
+
+import HomeScreen from './src/screens/HomeScreen';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!
-      <AntDesign name="retweet" size={24} color="black" />
-      </Text>
-      <StatusBar style="auto" />
+      <HomeScreen/>
+      <StatusBar style="dark" backgroundColor= "cyan" />
     </View>
   );
 }
@@ -17,8 +16,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#d1d1d1',
     alignItems: 'center',
-    justifyContent: 'center',
   },
 });
