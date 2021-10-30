@@ -7,6 +7,7 @@ import styles from "./styles";
 import product from "../../data/product";
 import QuantitySelector from "../../components/QuantitySelector";
 import Buttons from "../../components/Buttons";
+import ImageCarousel from "../../components/ImageCarousel";
 
 const ProductScreen = () => {
   const [selectedOption, setSelectedOption] = useState(
@@ -19,6 +20,9 @@ const ProductScreen = () => {
       <View style={styles.container}>
         {/* Title */}
         <Text>{product.title}</Text>
+
+        {/* Image carousel */}
+        <ImageCarousel images={product.images} />
 
         {/* Color picker */}
         <Picker
