@@ -2,14 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import HomeScreen from './src/screens/HomeScreen';
-import ProductScreen from './src/screens/ProductScreen';
-import ShoopingCartScreen from './src/screens/ShoopingCartScreen';
+import AdressScreen from './src/screens/AdressScreen';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <ShoopingCartScreen/>
+      <AdressScreen />
       <StatusBar style="dark" backgroundColor= "cyan" />
     </View>
   );
