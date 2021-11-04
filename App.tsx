@@ -4,11 +4,12 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import HomeScreen from './src/screens/HomeScreen';
 import ProductScreen from './src/screens/ProductScreen';
+import ShoopingCartScreen from './src/screens/ShoopingCartScreen';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <ProductScreen/>
+      <ShoopingCartScreen/>
       <StatusBar style="dark" backgroundColor= "cyan" />
     </View>
   );

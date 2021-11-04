@@ -18,7 +18,6 @@ const Buttons = ({ text, onPress, containerStyles }: ButtonProps) => {
 const styles = StyleSheet.create({
   root: {
     backgroundColor: "#e47911",
-    margin: 10,
     height: 35,
     justifyContent: "center",
     alignItems: "center",
@@ -28,7 +27,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    color: "white"
+    color: "black"
   },
 });
 
