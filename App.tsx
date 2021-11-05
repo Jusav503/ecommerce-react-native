@@ -1,22 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import AdressScreen from './src/screens/AdressScreen';
+import Router from './src/router';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <AdressScreen />
+    <SafeAreaProvider>
       <StatusBar style="dark" backgroundColor= "cyan" />
-    </View>
+      <Router />
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#d1d1d1',
-    alignItems: 'center',
-  },
-});
