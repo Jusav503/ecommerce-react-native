@@ -17,8 +17,8 @@ const Buttons = ({ text, onPress, containerStyles }: ButtonProps) => {
 
 const styles = StyleSheet.create({
   root: {
-    backgroundColor: "#e47911",
-    height: 35,
+    backgroundColor: "#F0B27A",
+    height: 40,
     justifyContent: "center",
     alignItems: "center",
     borderWidth: 1,

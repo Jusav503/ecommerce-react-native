@@ -3,8 +3,8 @@ import { Dimensions, StyleSheet } from "react-native";
 const WIDTH = Dimensions.get('window').width;
 
 const styles = StyleSheet .create({
-    container:{ padding: 10, width: WIDTH, },
-    picker:{ backgroundColor:"#bcbcbc", },
+    container:{ padding: 10, width: WIDTH, backgroundColor:"#E5E7E9"},
+    picker:{ backgroundColor:"#D7DBDD", },
     row:{ marginVertical: 10 },
     input:{
         backgroundColor: "white", 
@@ -14,6 +14,7 @@ const styles = StyleSheet .create({
         borderRadius: 3,
         borderWidth: 0.5
     },
+    errorLabel:{color: "red"}
 })
 
 export default styles;

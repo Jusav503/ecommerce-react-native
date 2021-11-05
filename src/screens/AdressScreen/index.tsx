@@ -1,6 +1,6 @@
 import { Picker } from "@react-native-picker/picker";
 import React, { useState } from "react";
-import { View, Text, TextInput, Alert, } from "react-native";
+import { View, Text, TextInput, Alert, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import countryList from "country-list";
 
@@ -12,17 +12,24 @@ const AdressScreen = () => {
   const [country, setCountry] = useState(countries[0].code);
   const [fullname, setFullname] = useState("");
   const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("")
-  const [city, setCity] = useState("")
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [addressError, setAddressError] = useState("");
 
   const onCheckout = () => {
-    if(!fullname) {
+    if (!fullname) {
       Alert.alert("Please fill in the empty fields");
     }
-  }
+  };
+  const validateAddress = () => {
+    if (address.length < 5) {
+      setAddressError('Please enter a valid address');
+    }
+  };
+
   return (
     <SafeAreaView>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Picker
           selectedValue={country}
           onValueChange={setCountry}
@@ -50,33 +57,36 @@ const AdressScreen = () => {
             style={styles.input}
             value={phone}
             onChangeText={setPhone}
-            keyboardType={'phone-pad'}
+            keyboardType={"phone-pad"}
           />
         </View>
 
         {/* Address */}
         <View style={styles.row}>
-          <Text>address</Text>
+          <Text>Address</Text>
           <TextInput
             style={styles.input}
-            value={address}
-            onChangeText={setAddress}
             placeholder="Street address, Apt, Suite, Unit, Building (optional)"
+            value={address}
+            onChangeText={text => {
+              setAddress(text);
+              setAddressError("");
+            }}
+            onEndEditing={validateAddress}
           />
+          {!!addressError && (
+            <Text style={styles.errorLabel}>{addressError}</Text>
+          )}
         </View>
 
         {/* City */}
         <View style={styles.row}>
           <Text>City</Text>
-          <TextInput
-            style={styles.input}
-            value={city}
-            onChangeText={setCity}
-          />
+          <TextInput style={styles.input} value={city} onChangeText={setCity} />
         </View>
 
         <Buttons text="Checkout" onPress={onCheckout} />
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
