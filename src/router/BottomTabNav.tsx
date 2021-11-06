@@ -1,9 +1,15 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
-import { SimpleLineIcons, FontAwesome, AntDesign, Feather } from "@expo/vector-icons";
+import {
+  SimpleLineIcons,
+  FontAwesome,
+  AntDesign,
+  Feather,
+} from "@expo/vector-icons";
 
 import HomeScreen from "../screens/HomeScreen";
-import ShoopingCartScreen from "../screens/ShoopingCartScreen";
+import ShoppingCartStack from "../router/ShoppingCartStack";
+import HomeStack from "./HomeStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -15,11 +21,11 @@ const BottomTabNav = () => {
         headerShown: false,
         tabBarShowLabel: false,
         tabBarInactiveTintColor: "black",
-        tabBarActiveTintColor: "#2980B9"
+        tabBarActiveTintColor: "#2980B9",
       }}
     >
       <Tab.Screen
-        component={HomeScreen}
+        component={HomeStack}
         name="Home"
         options={{
           tabBarIcon: ({ color }) => (
@@ -37,7 +43,7 @@ const BottomTabNav = () => {
         }}
       />
       <Tab.Screen
-        component={ShoopingCartScreen}
+        component={ShoppingCartStack}
         name="shoppingCart"
         options={{
           tabBarIcon: ({ color }) => (

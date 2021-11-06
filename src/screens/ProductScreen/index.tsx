@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { ScrollView, Text, View } from "react-native";
 import { Picker } from "@react-native-picker/picker";
+import { useRoute } from "@react-navigation/native";
 
 import styles from "./styles";
 import product from "../../data/product";
@@ -14,9 +14,11 @@ const ProductScreen = () => {
     product.options ? product.options[0] : null
   );
   const [quantity, setQuantity] = useState(1)
-  console.log(selectedOption);
+  const route = useRoute();
+  console.log(route);
+  
   return (
-    <SafeAreaView>
+    <ScrollView>
       <View style={styles.container}>
         {/* Title */}
         <Text>{product.title}</Text>
@@ -44,13 +46,15 @@ const ProductScreen = () => {
         <Text style={styles.description}>{product.description}</Text>
 
         {/* Quantity selector */}
-        <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
+        <View style={{marginBottom: 40}}>
+          <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
+        </View>
 
         {/* Button */}
-        <Buttons text="Add To Cart" containerStyles={{backgroundColor: "#e3c905"}} onPress={() => {console.warn("Add to cart")}} />
+        <Buttons text="Add To Cart" containerStyles={{backgroundColor: "#EE8C33"}} onPress={() => {console.warn("Add to cart")}} />
         <Buttons text="Buy now" onPress={() => {console.warn("Buy now")}} />
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 };
 

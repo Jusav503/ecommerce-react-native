@@ -5,14 +5,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import ProductItem from "../../components/ProductItem";
 import products from "../../data/products";
 
-const HomeScreen = () => {
+const HomeScreen = ({searchValue}: {searchValue: string}) => {
+  console.log(searchValue)
   return (
-    <SafeAreaView>
-      <FlatList
-        data={products}
-        renderItem={({ item }) => <ProductItem item={item} />}
-      />
-    </SafeAreaView>
+    <FlatList
+      data={products}
+      renderItem={({ item }) => <ProductItem item={item} />}
+    />
   );
 };
 

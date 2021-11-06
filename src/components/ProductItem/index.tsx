@@ -1,8 +1,9 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, Pressable } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
 import styles from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
 interface ProductItemProps {
   item: {
@@ -19,8 +20,12 @@ interface ProductItemProps {
 const ProductItem = (props: ProductItemProps) => {
   const { item } = props;
 
+  const navigation = useNavigation();
+  const onPress = () => {
+    navigation.navigate("Details", {id: item.id});
+  };
   return (
-    <View style={styles.container}>
+    <Pressable onPress={onPress} style={styles.container}>
       <Image style={styles.image} source={{ uri: item.image }} />
       <View style={styles.rightContainer}>
         <Text style={styles.price}>.</Text>
@@ -45,7 +50,7 @@ const ProductItem = (props: ProductItemProps) => {
           <Text style={styles.oldPrice}>€ {item.oldPrice}</Text>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 

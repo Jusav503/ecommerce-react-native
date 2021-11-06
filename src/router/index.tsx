@@ -1,17 +1,17 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+import { NavigationContainer } from "@react-navigation/native";
 import BottomTabNav from "./BottomTabNav";
 
-const Root = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const Router = () => {
   return (
     <NavigationContainer>
-      <Root.Navigator>
-        <Root.Screen component={BottomTabNav} name="Root" options={{ headerShown: false }} />
-      </Root.Navigator>
+        <Stack.Navigator>
+          <Stack.Screen component={BottomTabNav} name="Navigation" options={{ headerShown: false }} />
+        </Stack.Navigator>
     </NavigationContainer>
   );
 };

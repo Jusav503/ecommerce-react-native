@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { FlatList, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -5,13 +6,18 @@ import Buttons from "../../components/Buttons";
 
 import CartProductItem from "../../components/CartProductItem";
 import products from "../../data/cart";
-import product from "../../data/product";
 
 const ShoopingCartScreen = () => {
+  const navigation = useNavigation();
+  
   const totalPrice = products.reduce(
     (sum, item) => sum + item.item.price * item.quantity,
     0
   );
+
+  const onCheckout = () => {
+    navigation.navigate("ProductDetails")
+  }
 
   return (
     <SafeAreaView>
@@ -28,7 +34,7 @@ const ShoopingCartScreen = () => {
             </Text>
             <Buttons
               text="Proceed to checkout"
-              onPress={() => console.warn("go to checkout")}
+              onPress={onCheckout}
               containerStyles={{
                 backgroundColor: "#f7e300",
                 borderColor: "#c7b702",

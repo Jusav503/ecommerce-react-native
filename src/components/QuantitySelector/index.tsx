@@ -2,12 +2,12 @@ import React from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const QuantitySelector = ({quantity, setQuantity}) => {
+const QuantitySelector = ({ quantity, setQuantity }) => {
   const onMinus = () => {
-      setQuantity(Math.max(0, quantity - 1));
+    setQuantity(Math.max(0, quantity - 1));
   };
   const onPlus = () => {
-      setQuantity(quantity + 1);
+    setQuantity(quantity + 1);
   };
 
   return (
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderWidth: 1,
     borderColor: "#e3e3e3",
-    backgroundColor: "white"
+    backgroundColor: "white",
   },
   button: {
     width: 35,

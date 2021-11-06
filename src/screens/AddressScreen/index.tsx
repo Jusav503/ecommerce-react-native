@@ -8,7 +8,7 @@ import styles from "./styles";
 import Buttons from "../../components/Buttons";
 
 const countries = countryList.getData();
-const AdressScreen = () => {
+const AddressScreen = () => {
   const [country, setCountry] = useState(countries[0].code);
   const [fullname, setFullname] = useState("");
   const [phone, setPhone] = useState("");
@@ -91,4 +91,4 @@ const AdressScreen = () => {
   );
 };
 
-export default AdressScreen;
+export default AddressScreen;
