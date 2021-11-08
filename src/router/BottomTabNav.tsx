@@ -10,6 +10,7 @@ import {
 import HomeScreen from "../screens/HomeScreen";
 import ShoppingCartStack from "../router/ShoppingCartStack";
 import HomeStack from "./HomeStack";
+import MenuScreen from "../screens/MenuScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -52,7 +53,7 @@ const BottomTabNav = () => {
         }}
       />
       <Tab.Screen
-        component={HomeScreen}
+        component={MenuScreen}
         name="menu"
         options={{
           tabBarIcon: ({ color }) => (
