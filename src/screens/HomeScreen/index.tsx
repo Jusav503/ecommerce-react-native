@@ -1,12 +1,17 @@
-import React from "react";
+import { DataStore } from "@aws-amplify/datastore";
+import React, { useEffect, useState } from "react";
 import { FlatList } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 import ProductItem from "../../components/ProductItem";
-import products from "../../data/products";
+import { Product } from "../../models";
 
-const HomeScreen = ({searchValue}: {searchValue: string}) => {
-  console.log(searchValue)
+const HomeScreen = ({ searchValue }: { searchValue: string }) => {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    DataStore.query(Product).then(setProducts);
+  }, []);
+
   return (
     <FlatList
       data={products}

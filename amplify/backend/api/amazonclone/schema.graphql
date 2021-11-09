@@ -7,7 +7,7 @@ type Product @model @auth(rules: [{allow: public}]) {
   options: [String!]
 
   avgRating: Float
-  ratings: Integer
+  ratings: Int
   price: Float!
   oldPrice: Float
 }
@@ -15,9 +15,9 @@ type Product @model @auth(rules: [{allow: public}]) {
 type CartProduct @model @auth(rules: [{allow: public}]) {
   id: ID!
   userSub: String!
-  quantity: Integer!
+  quantity: Int!
   option: String
   productID: ID!
-  product: Product @connection{fields:["productID"]}
+  product: Product @connection(fields: ["productID"])
 }
 

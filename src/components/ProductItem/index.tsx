@@ -22,14 +22,14 @@ const ProductItem = (props: ProductItemProps) => {
 
   const navigation = useNavigation();
   const onPress = () => {
-    navigation.navigate("Details", {id: item.id});
+    navigation.navigate("Details", { id: item.id });
   };
   return (
     <Pressable onPress={onPress} style={styles.container}>
       <Image style={styles.image} source={{ uri: item.image }} />
       <View style={styles.rightContainer}>
         <Text style={styles.price}>.</Text>
-        <Text style={styles.title} numberOfLines={3}>
+        <Text numberOfLines={3}>
           {item.title}
         </Text>
         <View style={styles.rating}>
@@ -46,8 +46,8 @@ const ProductItem = (props: ProductItemProps) => {
           </Text>
         </View>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Text style={styles.price}>from € {item.price}</Text>
-          <Text style={styles.oldPrice}>€ {item.oldPrice}</Text>
+          <Text style={styles.price}>from € {item.price.toFixed(2)}</Text>
+          <Text style={styles.oldPrice}>€ {item.oldPrice.toFixed(2)}</Text>
         </View>
       </View>
     </Pressable>
