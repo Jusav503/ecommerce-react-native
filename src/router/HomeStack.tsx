@@ -49,7 +49,7 @@ const HomeStack = () => {
       <Stack.Screen
         component={ProductScreen}
         name="Details"
-        options={{ title: "" }}
+        options={{ title: "Hola" }}
       />
     </Stack.Navigator>
   );

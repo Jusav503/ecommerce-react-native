@@ -1,6 +1,6 @@
 import { DataStore } from "@aws-amplify/datastore";
 import React, { useEffect, useState } from "react";
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
 
 import ProductItem from "../../components/ProductItem";
 import { Product } from "../../models";
@@ -13,10 +13,12 @@ const HomeScreen = ({ searchValue }: { searchValue: string }) => {
   }, []);
 
   return (
-    <FlatList
-      data={products}
-      renderItem={({ item }) => <ProductItem item={item} />}
-    />
+    <View>
+      <FlatList
+        data={products}
+        renderItem={({ item }) => <ProductItem item={item} />}
+      />
+    </View>
   );
 };
 

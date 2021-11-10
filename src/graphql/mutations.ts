@@ -86,21 +86,25 @@ export const createCartProduct = /* GraphQL */ `
       option
       productID
       product {
-        id
-        title
-        description
-        image
-        images
-        options
-        avgRating
-        ratings
-        price
-        oldPrice
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
+        items {
+          id
+          title
+          description
+          image
+          images
+          options
+          avgRating
+          ratings
+          price
+          oldPrice
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
       }
       _version
       _deleted
@@ -122,21 +126,25 @@ export const updateCartProduct = /* GraphQL */ `
       option
       productID
       product {
-        id
-        title
-        description
-        image
-        images
-        options
-        avgRating
-        ratings
-        price
-        oldPrice
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
+        items {
+          id
+          title
+          description
+          image
+          images
+          options
+          avgRating
+          ratings
+          price
+          oldPrice
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
       }
       _version
       _deleted
@@ -158,21 +166,25 @@ export const deleteCartProduct = /* GraphQL */ `
       option
       productID
       product {
-        id
-        title
-        description
-        image
-        images
-        options
-        avgRating
-        ratings
-        price
-        oldPrice
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
+        items {
+          id
+          title
+          description
+          image
+          images
+          options
+          avgRating
+          ratings
+          price
+          oldPrice
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
       }
       _version
       _deleted

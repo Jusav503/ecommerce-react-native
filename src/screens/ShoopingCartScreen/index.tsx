@@ -1,7 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { FlatList, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import Buttons from "../../components/Buttons";
 
 import CartProductItem from "../../components/CartProductItem";
@@ -20,7 +19,7 @@ const ShoopingCartScreen = () => {
   }
 
   return (
-    <SafeAreaView>
+    <View>
       <FlatList
         data={products}
         renderItem={({ item }) => <CartProductItem cartItem={item} />}
@@ -44,7 +43,7 @@ const ShoopingCartScreen = () => {
           </View>
         )}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 

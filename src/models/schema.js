@@ -157,16 +157,16 @@ export const schema = {
                 },
                 "product": {
                     "name": "product",
-                    "isArray": false,
+                    "isArray": true,
                     "type": {
                         "model": "Product"
                     },
                     "isRequired": false,
                     "attributes": [],
+                    "isArrayNullable": true,
                     "association": {
-                        "connectionType": "HAS_ONE",
-                        "associatedWith": "id",
-                        "targetName": "productID"
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "id"
                     }
                 },
                 "createdAt": {
@@ -214,5 +214,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "a46fe0bfe10d459fbc319aee7ff6fd21"
+    "version": "5a1fc1830362a5d6610e0f038d9bd4c4"
 };

@@ -1,4 +1,6 @@
-type Product @model @auth(rules: [{allow: public}]) {
+type Product
+  @model
+  @auth(rules: [{ allow: public }]){
   id: ID!
   title: String!
   description: String
@@ -12,12 +14,11 @@ type Product @model @auth(rules: [{allow: public}]) {
   oldPrice: Float
 }
 
-type CartProduct @model @auth(rules: [{allow: public}]) {
+type CartProduct @model @auth(rules: [{ allow: public }]) {
   id: ID!
   userSub: String!
   quantity: Int!
   option: String
   productID: ID!
-  product: Product @connection(fields: ["productID"])
+  product: [Product] @connection(fields: ["productID"])
 }
-
